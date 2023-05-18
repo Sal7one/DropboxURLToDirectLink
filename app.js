@@ -12,8 +12,8 @@ function linkTyped() {
   if (linkValue.length > 11) {
     const newLink = transformDropboxLink(linkValue);
     if (newLink === "error") {
-      disableStuff("Bad Link provided...");
-      transformedLink.innerText = newLink;
+      disableStuff();
+      transformedLink.innerText = "Bad or incomplete Link provided...";
       return;
     }
     enableStuff(newLink);
@@ -43,9 +43,12 @@ function transformDropboxLink(link) {
       throw new Error('Invalid Link');
 
     const trimmedLink = link.substring(dropboxIndex);
-    const url = new URL(`https://${trimmedLink}`);
+    const completeURL = `https://${trimmedLink}`.replaceAll(" ", "");
+    const url = new URL(completeURL);
     const pathParts = url.pathname.split('/');
     const fileName = pathParts[pathParts.length - 1];
+    if(fileName.length < 5) 
+      throw new Error('Invalid Link');
 
     const transformedLink = `https://dl.dropboxusercontent.com${url.pathname.substring(0, url.pathname.lastIndexOf('/'))}/${fileName}`;
     return transformedLink;

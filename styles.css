@@ -36,6 +36,10 @@ body {
   button.goBtn:hover {
     background-color: #023e8a;
   }
+
+  button.goBtn:disabled{
+    background-color: darkgray;
+  }
   
   a#transformedLink {
     display: block;
