@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "DropboxLinkToDL",
+  "version": "1.0.0",
+  "description": "Makes Dropbox links into direcLinks",
+  "content_scripts": [
+    {
+      "run_at":"document_start",
+      "css": ["styles.css"],
+      "js": ["app.js"]
+    }
+  ],
+  "action": {"default_title": "Helper Popup"},
+  "permissions": ["tabs"],
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

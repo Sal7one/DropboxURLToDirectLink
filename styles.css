@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h3 {
+    margin-top: 30px;
+  }
+  
+  label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"] {
+    width: 300px;
+    height: 30px;
+    font-size: 16px;
+    padding: 5px;
+  }
+  
+  button.goBtn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0077b6;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button.goBtn:hover {
+    background-color: #023e8a;
+  }
+  
+  a#transformedLink {
+    display: block;
+    font-size: 18px;
+    color: #000;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+  
