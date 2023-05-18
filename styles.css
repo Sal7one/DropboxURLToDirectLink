@@ -4,9 +4,10 @@ body {
     margin: 0;
     padding: 20px;
   }
-  
+
   h3 {
     margin-top: 30px;
+    display: block;
   }
   
   label {
@@ -22,22 +23,23 @@ body {
     padding: 5px;
   }
   
-  button.goBtn {
-    display: inline-block;
+  button.btn {
+    display: block;
     padding: 10px 20px;
     font-size: 16px;
     background-color: #0077b6;
     color: #fff;
     border: none;
     cursor: pointer;
+    margin: 10px;
     transition: background-color 0.3s ease;
   }
   
-  button.goBtn:hover {
+  button.btn:hover {
     background-color: #023e8a;
   }
 
-  button.goBtn:disabled{
+  button.btn:disabled{
     background-color: darkgray;
   }
   

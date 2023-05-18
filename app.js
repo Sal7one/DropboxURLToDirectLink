@@ -1,4 +1,5 @@
 const goBtn = document.getElementById('goBtn');
+const copyBtn = document.getElementById('copyBtn');
 const newLinkText = document.getElementById('newLinkText');
 const transformedLink = document.getElementById('transformedLink');
 const originalLinkInput = document.getElementById('originalLink');
@@ -6,6 +7,15 @@ const originalLinkInput = document.getElementById('originalLink');
 newLinkText.style.display = "none";
 originalLinkInput.addEventListener("input", linkTyped);
 goBtn.addEventListener("click", () => transformedLink.click());
+copyBtn.addEventListener("click", ()=>{
+    navigator.clipboard.writeText(transformedLink.href)
+      .then(() => {
+        console.log("All good");
+      })
+      .catch((error) => {
+        console.error('Failed to copy to clipboard:', error);
+      });
+});
 
 function linkTyped() {
   const linkValue = originalLinkInput.value;
@@ -25,6 +35,7 @@ function linkTyped() {
 function disableStuff() {
   newLinkText.style.display = "none";
   goBtn.disabled = true;
+  copyBtn.disabled = true;
 }
 
 function enableStuff(newLink) {
@@ -33,6 +44,7 @@ function enableStuff(newLink) {
   transformedLink.href = newLink;
   transformedLink.innerText = newLink;
   goBtn.disabled = false;
+  copyBtn.disabled = false;
 }
 
 function transformDropboxLink(link) {
